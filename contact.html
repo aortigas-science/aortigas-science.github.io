@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Alejandro Ortigas-Vasquez</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #2563eb;
+            --background: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1.5rem 1.25rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 2rem;
+        }
+        
+        .contact-intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-methods {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-method {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        
+        .contact-method h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-method a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .social-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1.5rem 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .social-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+            color: var(--accent);
+        }
+        
+        .social-icon-large {
+            font-size: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .social-icon {
+            font-size: 1.3rem;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                font-size: 0.85rem;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="research.html">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="activities.html">Outreach</a>
+                <a href="news.html">News & Media</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html" class="active">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-subtitle">Get In Touch</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <p class="contact-intro">
+                I'm always interested in discussing potential collaborations, research opportunities, 
+                or answering questions about my work. Feel free to reach out through any of the methods below.
+            </p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>Email</h3>
+                    <a href="/cdn-cgi/l/email-protection#4425292b71737074043437316a212031"><span class="__cf_email__" data-cfemail="f2939f9dc7c5c6c2b2828187dc979687">[email&#160;protected]</span></a>
+                </div>
+
+                <div class="contact-method">
+                    <h3>Office</h3>
+                    <p>
+                        Millennium Science Complex<br>
+                        The Pennsylvania State University<br>
+                        University Park, PA 16802
+                    </p>
+                </div>
+
+                <div class="contact-method">
+                    <h3>Phone</h3>
+                    <a href="tel:+18146991404">(814) 699-1404</a>
+                </div>
+            </div>
+
+            <h3 style="font-family: 'Crimson Pro', serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">Connect Online</h3>
+            
+            <div class="social-grid">
+                <a href="https://www.linkedin.com/in/alejandro-ortigas-vásquez-642643141" target="_blank" class="social-card">
+                    <span class="social-icon-large">in</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://x.com/OrtigasVasquez" target="_blank" class="social-card">
+                    <span class="social-icon-large">𝕏</span>
+                    <span>X/Twitter</span>
+                </a>
+                <a href="https://github.com/ortigasa9" target="_blank" class="social-card">
+                    <span class="social-icon-large">⌘</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" class="social-card">
+                    <span class="social-icon-large">🎓</span>
+                    <span>Google Scholar</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-name">Alejandro Ortigas-Vasquez</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/alejandro-ortigas-vásquez-642643141" target="_blank" class="social-link"><span class="social-icon">in</span> LinkedIn</a>
+                    <a href="https://x.com/OrtigasVasquez" target="_blank" class="social-link"><span class="social-icon">𝕏</span> X/Twitter</a>
+                    <a href="https://github.com/ortigasa9" target="_blank" class="social-link"><span class="social-icon">⌘</span> GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" class="social-link"><span class="social-icon">🎓</span> Google Scholar</a>
+                    <a href="https://orcid.org/0000-0001-5233-9573" target="_blank" class="social-link"><span class="social-icon">⊕</span> ORCID</a>
+                </div>
+                  <p class="copyright">&

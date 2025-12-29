@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Media - Alejandro Ortigas-Vasquez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #2563eb;
+            --background: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            padding: 1.5rem 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+/* News & Media Section */
+        .news-media-section {
+            padding: 4rem 2rem;
+            background: var(--background);
+        }
+        
+        .news-media-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* Featured Video */
+        .featured-video {
+            margin: 0 auto 4rem;
+            max-width: 1000px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+        
+        .video-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-header h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Video Link Styles */
+        .video-link-container {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.02);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        
+        .video-thumbnail:hover .play-button {
+            opacity: 1;
+        }
+        
+        .video-link-info {
+            text-align: center;
+        }
+        
+        .video-link-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* News Timeline */
+        .news-timeline {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        .news-timeline > h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .year-section {
+            margin-bottom: 3rem;
+        }
+        
+        .year-header {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .news-item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--border);
+            transition: border-color 0.2s ease;
+        }
+        
+        .news-item:hover {
+            border-left-color: var(--accent);
+        }
+        
+        .news-date {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .news-content {
+            color: var(--text);
+            line-height: 1.8;
+        }
+        
+        .news-content a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        
+        .news-content a:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        .news-content strong {
+            font-weight: 600;
+        }
+
+
+        
+        
+
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-name {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .social-icon {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                font-size: 0.85rem;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="research.html">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="activities.html">Outreach</a>
+                <a href="news.html" class="active">News & Media</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">News & Media</h1>
+            <p class="page-subtitle">Recent Updates & Featured Content</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <!-- Featured Video -->
+            <div class="featured-video">
+                <div class="video-header">
+                    <h3>Featured Video</h3>
+                    <p>Watch my most recent interview, where I describe my undergraduate work on using molecular dynamics simulations to predict the most likely mutants of the SARS-CoV-2 main protease.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=Foz287iXLwU" target="_blank" class="video-link-container">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/Foz287iXLwU/maxresdefault.jpg" alt="Research presentation thumbnail">
+                        <div class="play-button">
+                            <svg width="68" height="48" viewBox="0 0 68 48">
+                                <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                                <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-link-info">
+                        <p><strong>Click to Watch on YouTube</strong></p>
+                        <p style="font-size: 0.95rem; color: var(--text-light);">This work was funded by the Mitacs Research Training Award (RTA)</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- News Timeline -->
+            <div class="news-timeline">
+                <h3>Recent News</h3>
+                
+                <div class="year-section">
+                    <h4 class="year-header">2025</h4>
+                    
+                    <div class="news-item">
+                        <div class="news-date">December 2025</div>
+                        <div class="news-content">
+                            Awarded the <strong>Peter J. Hudson Best Student Paper Award</strong>, recognizing the best student-led papers among candidates belonging to the Center of Infectious Disease Dynamics (CIDD).
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">December 2025</div>
+                        <div class="news-content">
+                            Our latest paper on <strong>high-fidelity long-read sequencing of an avian herpesvirus</strong> was published in PLOS Pathogens. This work reveals extensive intrapopulation diversity in tandem repeat regions.
+                            <a href="https://doi.org/10.1371/journal.ppat.1013435" target="_blank">Read the paper</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">July 2025</div>
+                        <div class="news-content">
+                            Awarded the <strong>University of Michigan Postdoc Preview Award</strong>, selected from a highly competitive pool of applicants to participate in a fully funded two-day event to interview with prospective mentors for postdoctoral positions.
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">June 2025</div>
+                        <div class="news-content">
+                            Started mentoring summer undergraduate students through the <strong>Summer Research Opportunities Program (SROP)</strong>. Currently mentoring Braylen Washington from the University of Florida on varicella-zoster virus genome sequencing.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <h4 class="year-header">2024</h4>
+                    
+                    <div class="news-item">
+                        <div class="news-date">November 2024</div>
+                        <div class="news-content">
+                            Our paper on <strong>comparative analysis of multiple consensus genomes</strong> of the same strain of Marek's disease virus was published in Virus Evolution, revealing significant intrastrain variation.
+                            <a href="https://doi.org/10.1093/ve/veae047" target="_blank">Read the paper</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">September 2024</div>
+                        <div class="news-content">
+                            Received the <strong>J. Ben and Helen D. Hill Memorial Fund Award</strong> recognizing outstanding graduate students in Plant Science and Genetics.
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">July 2024</div>
+                        <div class="news-content">
+                            Presented research on herpesvirus genomics at the <strong>American Society of Virology (ASV) Annual Meeting</strong> in Columbus, Ohio. The talk focused on high-fidelity long-read sequencing revealing extensive intrapopulation diversity in repetitive elements.
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">April 2024</div>
+                        <div class="news-content">
+                            Our review paper <strong>"Embracing Complexity: What Novel Sequencing Methods Are Teaching Us About Herpesvirus Genomic Diversity"</strong> was published in the Annual Review of Virology.
+                            <a href="https://doi.org/10.1146/annurev-virology-100422-010336" target="_blank">Read the review</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="year-section">
+                    <h4 class="year-header">2023</h4>
+                    
+                    <div class="news-item">
+                        <div class="news-date">September 2023</div>
+                        <div class="news-content">
+                            Successfully passed the comprehensive examination in the Bioinformatics and Genomics graduate program at Penn State. This milestone marks the transition to PhD candidacy.
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">October 2023</div>
+                        <div class="news-content">
+                            Represented the <strong>Bioinformatics and Genomics program</strong> at the SACNAS National Conference, promoting Penn State graduate programs to undergraduate students from diverse and underrepresented backgrounds.
+                        </div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">July 2023</div>
+                        <div class="news-content">
+                            Presented at the <strong>47th International Herpesvirus Workshop (IHW)</strong> in Montana with a talk on genomic analyses of Marek's disease virus, revealing variation within and between classic MDV strains.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-name">Alejandro Ortigas-Vasquez</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/alejandro-ortigas-vásquez-642643141" target="_blank" class="social-link">
+                        <span class="social-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://x.com/OrtigasVasquez" target="_blank" class="social-link">
+                        <span class="social-icon">𝕏</span>
+                        X/Twitter
+                    </a>
+                    <a href="https://github.com/ortigasa9" target="_blank" class="social-link">
+                        <span class="social-icon">⌘</span>
+                        GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" class="social-link">
+                        <span class="social-icon">🎓</span>
+                        Google Scholar
+                    </a>
+                    <a href="https://orcid.org/0000-0001-5233-9573" target="_blank" class="social-link">
+                        <span class="social-icon">⊕</span>
+                        ORCID
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Alejandro Ortigas-Vasquez. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Alejandro Ortigas-Vasquez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #2563eb;
+            --background: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1.5rem 1.25rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 2rem;
+        }
+        
+        /* Research Sections */
+        .research-section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-header {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+        }
+        
+        .research-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .research-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .research-list {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+        
+        .research-list li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        /* Subsections */
+        .subsection {
+            margin: 3rem 0;
+        }
+        
+        .subsection-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .read-more-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        
+        .read-more-link:hover {
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-name {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .social-icon {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                font-size: 0.85rem;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-header {
+                font-size: 1.6rem;
+            }
+            
+            .subsection-title {
+                font-size: 1.3rem;
+            }
+            
+            .research-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="research.html" class="active">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="activities.html">Outreach</a>
+                <a href="news.html">News & Media</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Research</h1>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            
+            <!-- Method: Comparative Genomics Section -->
+            <div class="research-section">
+                <h2 class="section-header">Method: Comparative genomics</h2>
+                
+                <img src="images/comparative_genomics.png" alt="Comparative genomics of Marek's disease virus" class="research-image">
+                
+                <p class="research-text">
+                    DNA sequencing technologies now allow us to directly compare genetic information across individuals of the same species. In doing so, we can start to associate an organism's genetic makeup (i.e., genotype) with its observable biological traits (i.e., phenotype). While powerful, comparative genomic approaches still suffer from a number of limitations, including:
+                </p>
+                
+                <ol class="research-list">
+                    <li>Performing comparisons based on an incomplete (e.g., unresolved genomic termini/repeats) or narrow (e.g., coding regions) picture of the genome.</li>
+                    <li>Performing comparisons based on specific types of genomic variation (e.g., single-nucleotide polymorphisms) while excluding others (e.g., INDELs, large structural variants, etc.).</li>
+                </ol>
+                
+                <p class="research-text">
+                    In my research, I seek to address these limitations by either adapting existing methodologies (when possible), or by developing novel computational and/or molecular tools. My overall goal is to help close the "missing heritability" gap, and to expand the practical/actionable output of comparative genomic studies.
+                </p>
+                
+                <!-- Intrasample Diversity Subsection -->
+                <div class="subsection">
+                    <h3 class="subsection-title">Intrasample diversity</h3>
+                    <p class="research-text">
+                        The sequence of nucleotides that we often refer to as an organism's "genome" is seldom derived from a single DNA molecule. Instead, this sequence is meant to represent a collective of hundreds of thousands of DNA molecules present in a biological sample, each belonging to an individual cell or microbial particle (e.g., virion, bacterium). In recent years, it has become clear that biological systems are not as genetically uniform as previously thought, and that failing to account for this diversity when representing an organism's genotype can severely reduce the power and accuracy of comparative genomic approaches. <a href="https://doi.org/10.1093/ve/veae047" target="_blank" class="read-more-link">Read more about how I tackled this issue in my recent work.</a>
+                    </p>
+                </div>
+                
+                <!-- Tandem Repeats Subsection -->
+                <div class="subsection">
+                    <h3 class="subsection-title">Tandem Repeats</h3>
+                    <p class="research-text">
+                        Recent advances in DNA sequencing technologies have finally made it possible to explore genomic regions containing long stretches of repetitive DNA, otherwise known as tandem repeats. While most human tandem repeats consist of a single motif (e.g., CAT) repeated multiple times (e.g., CATCATCAT), my recent work on herpesvirus tandem repeats has revealed far more complex repeat architectures, which are often highly variable even within a viral sample. <a href="https://doi.org/10.1371/journal.ppat.1013435" target="_blank" class="read-more-link">Read more about these amazingly complex regions and the challenges involved in their analysis.</a>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Model: Herpesviruses Section -->
+            <div class="research-section">
+                <h2 class="section-header">Model: Herpesviruses</h2>
+                
+                <img src="images/herpesvirus_diagram.png" alt="Hand-drawn herpesvirus structure diagram" class="research-image">
+                
+                <p class="research-text">
+                    Like humans, herpesviruses such as herpes simplex type 1 (HSV-1) or Marek's disease virus (MDV) possess a double-stranded DNA genome. However, herpesvirus genomes are orders of magnitude smaller than human genomes, making them far cheaper to sequence and requiring significantly less computational resources to analyze. In my research, I aim to highlight herpesviruses as practical and powerful models for studying genomic variation in organisms with double-stranded DNA genomes. <a href="https://doi.org/10.1146/annurev-virology-100422-010336" target="_blank" class="read-more-link">Read more about herpesvirus genomes, their inherent challenges, and the methods used to study them in my recent review.</a>
+                </p>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-name">Alejandro Ortigas-Vasquez</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/alejandro-ortigas-vásquez-642643141" target="_blank" class="social-link">
+                        <span class="social-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://x.com/OrtigasVasquez" target="_blank" class="social-link">
+                        <span class="social-icon">𝕏</span>
+                        X/Twitter
+                    </a>
+                    <a href="https://github.com/ortigasa9" target="_blank" class="social-link">
+                        <span class="social-icon">⌘</span>
+                        GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" class="social-link">
+                        <span class="social-icon">🎓</span>
+                        Google Scholar
+                    </a>
+                    <a href="https://orcid.org/0000-0001-5233-9573" target="_blank" class="social-link">
+                        <span class="social-icon">⊕</span>
+                        ORCID
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Alejandro Ortigas-Vasquez. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Alejandro Ortigas-Vasquez</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #2563eb;
+            --background: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1.5rem 1.25rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 2rem;
+        }
+        
+        .cv-section {
+            margin-bottom: 3rem;
+        }
+        
+        .cv-section h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .cv-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cv-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .cv-item .meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-item p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .download-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .social-link:hover {
+            color: var(--accent);
+        }
+        
+        .social-icon {
+            font-size: 1.3rem;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                font-size: 0.85rem;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="publications.html">Publications</a>
+                <a href="research.html">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="activities.html">Outreach</a>
+                <a href="news.html">News & Media</a>
+                <a href="cv.html" class="active">CV</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Curriculum Vitae</h1>
+            <p class="page-subtitle">Academic & Professional Experience</p>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <a href="cv.pdf" download class="download-btn">Download Full CV (PDF)</a>
+
+            <div class="cv-section">
+                <h2>Education</h2>
+                <div class="cv-item">
+                    <h3>Ph.D. in Bioinformatics and Genomics</h3>
+                    <div class="meta">The Pennsylvania State University • Expected 2026</div>
+                    <p>Advisor: Dr. Moriah L. Szpara</p>
+                </div>
+                <div class="cv-item">
+                    <h3>HBSc in Bioinformatics</h3>
+                    <div class="meta">Lakehead University, Ontario, Canada • 2021</div>
+                    <p>Advisor: Dr. Ingeborg Zehbe</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Research Experience</h2>
+                <div class="cv-item">
+                    <h3>Graduate Research Assistant</h3>
+                    <div class="meta">Szpara Laboratory, The Pennsylvania State University • 2021-Present</div>
+                    <p>Research focus on herpesvirus genomics, viral diversity, and evolution using next-generation sequencing and computational approaches</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Select Publications</h2>
+                <div class="cv-item">
+                    <p><strong>A. Ortigas-Vasquez</strong>, C. D. Bowen, D. W. Renner, et al. (2025). "High-fidelity long-read sequencing of an avian herpesvirus reveals extensive intrapopulation diversity in tandem repeat regions." <em>PLOS Pathogens</em>, 21, e1013435.</p>
+                </div>
+                <div class="cv-item">
+                    <p><strong>A. Ortigas-Vasquez</strong>, U. Pandey, D. W. Renner, et al. (2024). "Comparative analysis of multiple consensus genomes of the same strain of Marek's disease virus reveals intrastrain variation." <em>Virus Evolution</em>, 10, veae047.</p>
+                </div>
+                <div class="cv-item">
+                    <p><strong>A. Ortigas-Vasquez</strong>, M. L. Szpara (2024). "Embracing Complexity: What Novel Sequencing Methods Are Teaching Us About Herpesvirus Genomic Diversity." <em>Annual Review of Virology</em>, 11, 67-87.</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Awards & Honors</h2>
+                <div class="cv-item">
+                    <h3>Peter J. Hudson Best Student Paper Award</h3>
+                    <div class="meta">Center of Infectious Disease Dynamics (CIDD) • 2025</div>
+                </div>
+                <div class="cv-item">
+                    <h3>University of Michigan Postdoc Preview Award</h3>
+                    <div class="meta">University of Michigan • 2025</div>
+                </div>
+                <div class="cv-item">
+                    <h3>J. Ben and Helen D. Hill Memorial Fund Award</h3>
+                    <div class="meta">The Pennsylvania State University • 2024</div>
+                </div>
+                <div class="cv-item">
+                    <h3>American Society of Virology Student Travel Award</h3>
+                    <div class="meta">American Society of Virology • 2024</div>
+                </div>
+                <div class="cv-item">
+                    <h3>Graham Endowed Fellowship</h3>
+                    <div class="meta">The Pennsylvania State University • 2021</div>
+                </div>
+                <div class="cv-item">
+                    <h3>Mitacs Research Training Award (RTA)</h3>
+                    <div class="meta">Mitacs • 2020</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Teaching Experience</h2>
+                <div class="cv-item">
+                    <h3>Teaching Assistant, BIOL 230W (Molecules and Cells)</h3>
+                    <div class="meta">The Pennsylvania State University • Spring 2024, Spring 2026</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Service & Leadership</h2>
+                <div class="cv-item">
+                    <h3>SROP Graduate Student Mentor</h3>
+                    <div class="meta">Summer Research Opportunities Program • 2025-Present</div>
+                </div>
+                <div class="cv-item">
+                    <h3>SACNAS National Conference Representative</h3>
+                    <div class="meta">Penn State Bioinformatics & Genomics Program • 2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-name">Alejandro Ortigas-Vasquez</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/alejandro-ortigas-vásquez-642643141" target="_blank" class="social-link">
+                        <span class="social-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://x.com/OrtigasVasquez" target="_blank" class="social-link">
+                        <span class="social-icon">𝕏</span>
+                        X/Twitter
+                    </a>
+                    <a href="https://github.com/ortigasa9" target="_blank" class="social-link">
+                        <span class="social-icon">⌘</span>
+                        GitHub
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=5daGSkkAAAAJ" target="_blank" class="social-link">
+                        <span class="social-icon">🎓</span>
+                        Google Scholar
+                    </a>
+                    <a href="https://orcid.org/0000-0001-5233-9573" target="_blank" class="social-link">
+                        <span class="social-icon">⊕</span>
+                        ORCID
+                    </a>
+                </div>
+                <p class="copyright">&copy; 2025 Alejandro Ortigas-Vasquez. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
